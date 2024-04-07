@@ -1,0 +1,470 @@
+# [No.1] construct_wrapper.1
+# In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(50)/    def construct(self, input_ids, input_mask, token_type_id, label_ids):/
+funcgraph fg_1(
+        %para1 : Tensor(I32)[1, 2048]    # input_ids
+        , %para2 : Tensor(I32)[1, 2048]    # input_mask
+        , %para3 : Tensor(I32)[1, 2048]    # token_type_id
+        , %para4 : Tensor(I32)[1, 1]    # label_ids
+        , %para5 : Ref[Tensor(F32)][25, 512]    # bert.bert.bert_embedding_lookup.embedding_table
+        , %para6 : Ref[Tensor(F32)][2]    # bert.dense_1.bias
+        , %para7 : Ref[Tensor(F32)][2, 512]    # bert.dense_1.weight
+        , %para8 : Ref[Tensor(F32)][512]    # bert.bert.dense.bias
+        , %para9 : Ref[Tensor(F32)][512, 512]    # bert.bert.dense.weight
+        , %para10 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.output.layernorm.gamma
+        , %para11 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.output.layernorm.beta
+        , %para12 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.output.layernorm.gamma
+        , %para13 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.output.layernorm.beta
+        , %para14 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.output.layernorm.gamma
+        , %para15 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.output.layernorm.beta
+        , %para16 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.output.layernorm.gamma
+        , %para17 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.output.layernorm.beta
+        , %para18 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.output.layernorm.gamma
+        , %para19 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.output.layernorm.beta
+        , %para20 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.output.layernorm.gamma
+        , %para21 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.output.layernorm.beta
+        , %para22 : Ref[Tensor(F32)][2, 512]    # bert.bert.bert_embedding_postprocessor.token_type_embedding.embedding_table
+        , %para23 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.attention.output.layernorm.gamma
+        , %para24 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.attention.output.layernorm.beta
+        , %para25 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.attention.output.layernorm.gamma
+        , %para26 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.attention.output.layernorm.beta
+        , %para27 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.attention.output.layernorm.gamma
+        , %para28 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.attention.output.layernorm.beta
+        , %para29 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.attention.output.layernorm.gamma
+        , %para30 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.attention.output.layernorm.beta
+        , %para31 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.attention.output.layernorm.gamma
+        , %para32 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.attention.output.layernorm.beta
+        , %para33 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.attention.output.layernorm.gamma
+        , %para34 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.attention.output.layernorm.beta
+        , %para35 : Ref[Tensor(F32)][512]    # bert.bert.bert_embedding_postprocessor.layernorm.gamma
+        , %para36 : Ref[Tensor(F32)][512]    # bert.bert.bert_embedding_postprocessor.layernorm.beta
+        , %para37 : Ref[Tensor(F32)][2048, 512]    # bert.bert.bert_embedding_postprocessor.full_position_embedding.embedding_table
+        , %para38 : Ref[Tensor(F32)][3072]    # bert.bert.bert_encoder.layers.0.intermediate.bias
+        , %para39 : Ref[Tensor(F32)][3072, 512]    # bert.bert.bert_encoder.layers.0.intermediate.weight
+        , %para40 : Ref[Tensor(F32)][3072]    # bert.bert.bert_encoder.layers.1.intermediate.bias
+        , %para41 : Ref[Tensor(F32)][3072, 512]    # bert.bert.bert_encoder.layers.1.intermediate.weight
+        , %para42 : Ref[Tensor(F32)][3072]    # bert.bert.bert_encoder.layers.2.intermediate.bias
+        , %para43 : Ref[Tensor(F32)][3072, 512]    # bert.bert.bert_encoder.layers.2.intermediate.weight
+        , %para44 : Ref[Tensor(F32)][3072]    # bert.bert.bert_encoder.layers.3.intermediate.bias
+        , %para45 : Ref[Tensor(F32)][3072, 512]    # bert.bert.bert_encoder.layers.3.intermediate.weight
+        , %para46 : Ref[Tensor(F32)][3072]    # bert.bert.bert_encoder.layers.4.intermediate.bias
+        , %para47 : Ref[Tensor(F32)][3072, 512]    # bert.bert.bert_encoder.layers.4.intermediate.weight
+        , %para48 : Ref[Tensor(F32)][3072]    # bert.bert.bert_encoder.layers.5.intermediate.bias
+        , %para49 : Ref[Tensor(F32)][3072, 512]    # bert.bert.bert_encoder.layers.5.intermediate.weight
+        , %para50 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.output.dense.bias
+        , %para51 : Ref[Tensor(F32)][512, 3072]    # bert.bert.bert_encoder.layers.0.output.dense.weight
+        , %para52 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.output.dense.bias
+        , %para53 : Ref[Tensor(F32)][512, 3072]    # bert.bert.bert_encoder.layers.1.output.dense.weight
+        , %para54 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.output.dense.bias
+        , %para55 : Ref[Tensor(F32)][512, 3072]    # bert.bert.bert_encoder.layers.2.output.dense.weight
+        , %para56 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.output.dense.bias
+        , %para57 : Ref[Tensor(F32)][512, 3072]    # bert.bert.bert_encoder.layers.3.output.dense.weight
+        , %para58 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.output.dense.bias
+        , %para59 : Ref[Tensor(F32)][512, 3072]    # bert.bert.bert_encoder.layers.4.output.dense.weight
+        , %para60 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.output.dense.bias
+        , %para61 : Ref[Tensor(F32)][512, 3072]    # bert.bert.bert_encoder.layers.5.output.dense.weight
+        , %para62 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.attention.output.dense.bias
+        , %para63 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.0.attention.output.dense.weight
+        , %para64 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.attention.output.dense.bias
+        , %para65 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.1.attention.output.dense.weight
+        , %para66 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.attention.output.dense.bias
+        , %para67 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.2.attention.output.dense.weight
+        , %para68 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.attention.output.dense.bias
+        , %para69 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.3.attention.output.dense.weight
+        , %para70 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.attention.output.dense.bias
+        , %para71 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.4.attention.output.dense.weight
+        , %para72 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.attention.output.dense.bias
+        , %para73 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.5.attention.output.dense.weight
+        , %para74 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.attention.attention.query_layer.bias
+        , %para75 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.0.attention.attention.query_layer.weight
+        , %para76 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.attention.attention.key_layer.bias
+        , %para77 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.0.attention.attention.key_layer.weight
+        , %para78 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.attention.attention.query_layer.bias
+        , %para79 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.1.attention.attention.query_layer.weight
+        , %para80 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.attention.attention.key_layer.bias
+        , %para81 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.1.attention.attention.key_layer.weight
+        , %para82 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.attention.attention.query_layer.bias
+        , %para83 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.2.attention.attention.query_layer.weight
+        , %para84 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.attention.attention.key_layer.bias
+        , %para85 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.2.attention.attention.key_layer.weight
+        , %para86 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.attention.attention.query_layer.bias
+        , %para87 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.3.attention.attention.query_layer.weight
+        , %para88 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.attention.attention.key_layer.bias
+        , %para89 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.3.attention.attention.key_layer.weight
+        , %para90 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.attention.attention.query_layer.bias
+        , %para91 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.4.attention.attention.query_layer.weight
+        , %para92 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.attention.attention.key_layer.bias
+        , %para93 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.4.attention.attention.key_layer.weight
+        , %para94 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.attention.attention.query_layer.bias
+        , %para95 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.5.attention.attention.query_layer.weight
+        , %para96 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.attention.attention.key_layer.bias
+        , %para97 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.5.attention.attention.key_layer.weight
+        , %para98 : Ref[Tensor(F32)][1024, 512]    # bert.lstm.weight_ih_l0
+        , %para99 : Ref[Tensor(F32)][1024, 512]    # bert.lstm.weight_ih_l0_reverse
+        , %para100 : Ref[Tensor(F32)][1024, 512]    # bert.lstm.weight_ih_l1
+        , %para101 : Ref[Tensor(F32)][1024, 512]    # bert.lstm.weight_ih_l1_reverse
+        , %para102 : Ref[Tensor(F32)][1024, 256]    # bert.lstm.weight_hh_l0
+        , %para103 : Ref[Tensor(F32)][1024, 256]    # bert.lstm.weight_hh_l0_reverse
+        , %para104 : Ref[Tensor(F32)][1024, 256]    # bert.lstm.weight_hh_l1
+        , %para105 : Ref[Tensor(F32)][1024, 256]    # bert.lstm.weight_hh_l1_reverse
+        , %para106 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_ih_l0
+        , %para107 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_ih_l0_reverse
+        , %para108 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_ih_l1
+        , %para109 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_ih_l1_reverse
+        , %para110 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_hh_l0
+        , %para111 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_hh_l0_reverse
+        , %para112 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_hh_l1
+        , %para113 : Ref[Tensor(F32)][1024]    # bert.lstm.bias_hh_l1_reverse
+        , %para114 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.0.attention.attention.value_layer.bias
+        , %para115 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.0.attention.attention.value_layer.weight
+        , %para116 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.1.attention.attention.value_layer.bias
+        , %para117 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.1.attention.attention.value_layer.weight
+        , %para118 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.2.attention.attention.value_layer.bias
+        , %para119 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.2.attention.attention.value_layer.weight
+        , %para120 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.3.attention.attention.value_layer.bias
+        , %para121 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.3.attention.attention.value_layer.weight
+        , %para122 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.4.attention.attention.value_layer.bias
+        , %para123 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.4.attention.attention.value_layer.weight
+        , %para124 : Ref[Tensor(F32)][512]    # bert.bert.bert_encoder.layers.5.attention.attention.value_layer.bias
+        , %para125 : Ref[Tensor(F32)][512, 512]    # bert.bert.bert_encoder.layers.5.attention.attention.value_layer.weight
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_36(%para1, %para2, %para3, %para4)    #(Tensor(I32)[1, 2048], Tensor(I32)[1, 2048], Tensor(I32)[1, 2048], Tensor(I32)[1, 1])    # fg_36=construct.36 #scope: Default
+#[CNode]44
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]45
+}
+# order:
+#   1: construct_wrapper.1:[CNode]44{[0]: ValueNode<FuncGraph> construct.36, [1]: input_ids, [2]: input_mask, [3]: token_type_id, [4]: label_ids}
+#   2: construct_wrapper.1:[CNode]45{[0]: ValueNode<Primitive> Return, [1]: [CNode]44}
+
+
+# [No.2] construct.36
+# In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(50)/    def construct(self, input_ids, input_mask, token_type_id, label_ids):/
+funcgraph fg_36[fg_1](
+        %para126 : Tensor(I32)[1, 2048]    # input_ids
+        , %para127 : Tensor(I32)[1, 2048]    # input_mask
+        , %para128 : Tensor(I32)[1, 2048]    # token_type_id
+        , %para129 : Tensor(I32)[1, 1]    # label_ids
+    ) {
+    %1 : Bool = DoSignaturePrimitive::S-Prim-equal{prim_type=1}("", "spearman_correlation")    #(String, String) #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]46
+    %2 : Bool = FuncGraph::fg_22(%1)    #(Bool)    # fg_22=bool_.22 #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]47
+    %3 : Func = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_48, FuncGraph::fg_37)    #(Bool, Func, Func)    # fg_48=✓construct.48, fg_37=✗construct.37 #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]49
+
+#------------------------> 1
+    %4 = %3() #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]50
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]51
+}
+# order:
+#   1: construct.36:loss{[0]: ValueNode<FuncGraph> construct.38, [1]: input_ids, [2]: input_mask, [3]: token_type_id}
+#   2: construct.36:[CNode]46{[0]: ValueNode<DoSignaturePrimitive> S-Prim-equal, [1]: ValueNode<StringImm> , [2]: ValueNode<StringImm> spearman_correlation}
+#   3: construct.36:[CNode]47{[0]: ValueNode<FuncGraph> bool_.22, [1]: [CNode]46}
+#   4: construct.36:[CNode]49{[0]: ValueNode<Primitive> Switch, [1]: [CNode]47, [2]: ValueNode<FuncGraph> ✓construct.48, [3]: ValueNode<FuncGraph> ✗construct.37}
+#   5: construct.36:[CNode]50{[0]: [CNode]49}
+#   6: construct.36:[CNode]51{[0]: ValueNode<Primitive> Return, [1]: [CNode]50}
+
+
+# [No.3] ✗construct.37
+# In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/
+funcgraph fg_37[fg_36](
+) {
+
+#------------------------> 2
+    %1 = $(construct.36):FuncGraph::fg_38(%para126, %para127, %para128)    #(Tensor(I32)[1, 2048], Tensor(I32)[1, 2048], Tensor(I32)[1, 2048])    # fg_38=construct.38 #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(51)/        logits = self.bert(input_ids, input_mask, token_type_id)/#loss
+    %2 = FuncGraph::fg_52(%1, %para129, I64(2))    #(Undefined, Tensor(I32)[1, 1], Undefined)    # fg_52=construct.52 #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(58)/            loss = self.loss(logits, label_ids, self.num_labels)/#loss
+    %3 = FuncGraph::fg_53(%2)    #(Undefined)    # fg_53=↓construct.53 #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]54
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(52)/        if self.assessment_method == "spearman_correlation":/#[CNode]55
+}
+# order:
+#   1: ✗construct.37:loss{[0]: ValueNode<FuncGraph> construct.52, [1]: loss, [2]: label_ids, [3]: ValueNode<Int64Imm> 2}
+#   2: ✗construct.37:[CNode]54{[0]: ValueNode<FuncGraph> ↓construct.53, [1]: loss}
+#   3: ✗construct.37:[CNode]55{[0]: ValueNode<Primitive> Return, [1]: [CNode]54}
+
+
+# [No.4] construct.38
+# In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(95)/    def construct(self, input_ids, input_mask, token_type_id):/
+funcgraph fg_38[fg_1](
+        %para130 : Tensor(I32)[1, 2048]    # input_ids
+        , %para131 : Tensor(I32)[1, 2048]    # input_mask
+        , %para132 : Tensor(I32)[1, 2048]    # token_type_id
+    ) {
+    %1 : Tuple[I64*2] = Primitive::getattr{prim_type=1}(%para130, "shape")    #(Tensor(I32)[1, 2048], String) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(99)/        batch_size = input_ids.shape[0]/#[CNode]56
+    %2 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(0))    #(Tuple[I64*2], I64) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(99)/        batch_size = input_ids.shape[0]/#batch_size
+    %3 : Tuple[Ref[Tensor(F32)]*3] = FuncGraph::fg_57(%para130, %para132, %para131)    #(Tensor(I32)[1, 2048], Tensor(I32)[1, 2048], Tensor(I32)[1, 2048])    # fg_57=construct.57 #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(96)/        sequence_output, pooled_output, _ = self.bert(input_ids, token_type_id, input_mask)/#[CNode]58
+    %4 : Tensor(F32)[1, 512] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, I64(1))    #(Tuple[Ref[Tensor(F32)]*3], I64) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(96)/        sequence_output, pooled_output, _ = self.bert(input_ids, token_type_id, input_mask)/#pooled_output
+    %5 : Tuple[I64,Tensor(F32)] = Primitive::MakeTuple{prim_type=1}(%2, %4)    #(I64, Tensor(F32)[1, 512]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(51)/        logits = self.bert(input_ids, input_mask, token_type_id)/#[CNode]59
+    %6 : Tuple[I64,Tensor(F32)] = Primitive::stop_gradient{prim_type=1}(%5)    #(Tuple[I64,Tensor(F32)]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(51)/        logits = self.bert(input_ids, input_mask, token_type_id)/#[CNode]60
+    %7 : Tensor(F32)[1, 2048, 512] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%3, I64(0))    #(Tuple[Ref[Tensor(F32)]*3], I64) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(96)/        sequence_output, pooled_output, _ = self.bert(input_ids, token_type_id, input_mask)/#sequence_output
+    %8 : Tensor(F32)[1, 2048, 512] = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"], SrcT=F32, DstT=F32, dst_type=F32](%7, F32)    #(Tensor(F32)[1, 2048, 512], TypeType) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(97)/        sequence_output = self.cast(sequence_output, self.dtype)/#sequence_output
+    %9 : Tensor(F32)[1, 2048, 512] = FuncGraph::fg_61(%8)    #(Tensor(F32)[1, 2048, 512])    # fg_61=construct.61 #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(98)/        sequence_output = self.dropout(sequence_output)/#sequence_output
+    %10 : Tuple[Tensor(F32),Tuple[Tensor(F32)*2]] = FuncGraph::fg_62(%9)    #(Tensor(F32)[1, 2048, 512])    # fg_62=construct.62 #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(104)/        hidden, (_, _) = self.lstm(sequence_output)/#[CNode]63
+    %11 : Tensor(F32)[1, 2048, 512] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%10, I64(0))    #(Tuple[Tensor(F32),Tuple[Tensor(F32)*2]], I64) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(104)/        hidden, (_, _) = self.lstm(sequence_output)/#hidden
+    %12 : Tensor(F32)[1, 2048, 512] = FuncGraph::fg_61(%11)    #(Tensor(F32)[1, 2048, 512])    # fg_61=construct.61 #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(105)/        hidden = self.dropout(hidden)/#hidden
+    %13 : Slice[Int64 : Int64 : Int64] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(I64(0), I64(1), I64(1))    #(I64, I64, I64) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]64
+    %14 : Tensor(F32)[1, 2048, 512] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%12, %13)    #(Tensor(F32)[1, 2048, 512], Slice[Int64 : Int64 : Int64]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]65
+    %15 : Tensor(F32)[2048, 512] = DoSignaturePrimitive::S-Prim-Squeeze{prim_type=1}[output_names=["output"], input_names=["x"], axis=(I64(0))](%14)    #(Tensor(F32)[1, 2048, 512]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]66
+    %16 : I64 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(I64) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]67
+    %17 : Slice[Int64 : kMetaTypeNone : Int64] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(%16, None, I64(1))    #(I64, NoneType, I64) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]68
+    %18 : Tensor(F32)[1, 2048, 512] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%12, %17)    #(Tensor(F32)[1, 2048, 512], Slice[Int64 : kMetaTypeNone : Int64]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]69
+    %19 : Tensor(F32)[2048, 512] = DoSignaturePrimitive::S-Prim-Squeeze{prim_type=1}[output_names=["output"], input_names=["x"], axis=(I64(0))](%18)    #(Tensor(F32)[1, 2048, 512]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]70
+    %20 : Tuple[Tensor(F32)*2] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%15, %19)    #(Tensor(F32)[2048, 512], Tensor(F32)[2048, 512]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#[CNode]71
+    %21 : Tensor(F32)[2048, 1024] = DoSignaturePrimitive::S-Prim-Concat{prim_type=1}[axis=I64(1), N=I64(2), inputNums=I64(2)](%20)    #(Tuple[Tensor(F32)*2]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(107)/        hidden= self.concat((self.squeeze(hidden[0:1:1]), self.squeeze(hidden[-1::1])))/#hidden
+
+#------------------------> 3
+    %22 = FuncGraph::fg_39(%21)    #(Tensor(F32)[2048, 1024])    # fg_39=construct.39 #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(111)/        logits = self.dense_1(hidden)/#logits
+    %23 = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"], SrcT=F32, DstT=F32, dst_type=F32](%22, F32)    #(Undefined, TypeType) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(112)/        logits = self.cast(logits, self.dtype)/#logits
+    %24 = DoSignaturePrimitive::S-Prim-Softmax{prim_type=1}[output_names=["output"], input_names=["x"], axis=(I64(-1))](%23)    #(Undefined) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(113)/        logits = self.log_softmax(logits)/#logits
+    %25 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%24, %6)    #(Undefined, Tuple[I64,Tensor(F32)]) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(51)/        logits = self.bert(input_ids, input_mask, token_type_id)/#[CNode]72
+    Primitive::Return{prim_type=1}(%25)    #(Undefined) #scope: Default/bert-BertCLSModel
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(114)/        return logits/#[CNode]73
+}
+# order:
+#   1: construct.38:[CNode]58{[0]: ValueNode<FuncGraph> construct.57, [1]: input_ids, [2]: token_type_id, [3]: input_mask}
+#   2: construct.38:sequence_output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]58, [2]: ValueNode<Int64Imm> 0}
+#   3: construct.38:pooled_output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]58, [2]: ValueNode<Int64Imm> 1}
+#   4: construct.38:sequence_output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: sequence_output, [2]: ValueNode<Float> Float32}
+#   5: construct.38:sequence_output{[0]: ValueNode<FuncGraph> construct.61, [1]: sequence_output}
+#   6: construct.38:[CNode]56{[0]: ValueNode<Primitive> getattr, [1]: input_ids, [2]: ValueNode<StringImm> shape}
+#   7: construct.38:batch_size{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]56, [2]: ValueNode<Int64Imm> 0}
+#   8: construct.38:[CNode]63{[0]: ValueNode<FuncGraph> construct.62, [1]: sequence_output}
+#   9: construct.38:hidden{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]63, [2]: ValueNode<Int64Imm> 0}
+#  10: construct.38:hidden{[0]: ValueNode<FuncGraph> construct.61, [1]: hidden}
+#  11: construct.38:[CNode]64{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<Int64Imm> 0, [2]: ValueNode<Int64Imm> 1, [3]: ValueNode<Int64Imm> 1}
+#  12: construct.38:[CNode]65{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: hidden, [2]: [CNode]64}
+#  13: construct.38:[CNode]66{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Squeeze, [1]: [CNode]65}
+#  14: construct.38:[CNode]67{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#  15: construct.38:[CNode]68{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: [CNode]67, [2]: ValueNode<None> None, [3]: ValueNode<Int64Imm> 1}
+#  16: construct.38:[CNode]69{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: hidden, [2]: [CNode]68}
+#  17: construct.38:[CNode]70{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Squeeze, [1]: [CNode]69}
+#  18: construct.38:[CNode]71{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]66, [2]: [CNode]70}
+#  19: construct.38:hidden{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Concat, [1]: [CNode]71}
+#  20: construct.38:logits{[0]: ValueNode<FuncGraph> construct.39, [1]: hidden}
+#  21: construct.38:logits{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: logits, [2]: ValueNode<Float> Float32}
+#  22: construct.38:logits{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Softmax, [1]: logits}
+#  23: construct.38:[CNode]73{[0]: ValueNode<Primitive> Return, [1]: [CNode]72}
+
+
+# [No.5] construct.39
+# In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(320)/    def construct(self, x):/
+funcgraph fg_39[fg_1](
+        %para133 : Tensor(F32)[2048, 1024]    # x
+    ) {
+    %1 : Tensor(F16)[2048, 1024] = Primitive::mixed_precision_cast{prim_type=1}(F16, %para133)    #(TypeType, Tensor(F32)[2048, 1024]) #scope: Default
+#[CNode]74
+
+#------------------------> 4
+    %2 = FuncGraph::fg_40(%1, %para6, %para7)    #(Tensor(F16)[2048, 1024], Ref[Tensor(F32)][2], Ref[Tensor(F32)][2, 512])    # fg_40=L-construct.40 #scope: Default
+#[CNode]75
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#[CNode]76
+}
+# order:
+#   1: construct.39:[CNode]74{[0]: ValueNode<Primitive> mixed_precision_cast, [1]: ValueNode<Float> Float16, [2]: x}
+#   2: construct.39:[CNode]75{[0]: ValueNode<FuncGraph> L-construct.40, [1]: [CNode]74, [2]: bert.dense_1.bias, [3]: bert.dense_1.weight}
+#   3: construct.39:[CNode]76{[0]: ValueNode<Primitive> Return, [1]: [CNode]75}
+
+
+# [No.6] L-construct.40
+# In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(320)/    def construct(self, x):/
+funcgraph fg_40(
+        %para134 : Tensor(F16)[2048, 1024]    # x
+        , %para135 : Ref[Tensor(F32)][2]    # L-bert.dense_1.bias
+        , %para136 : Ref[Tensor(F32)][2, 512]    # L-bert.dense_1.weight
+    ) {
+    %1 : Tensor(F16)[2048, 1024] = Primitive::mixed_precision_cast{prim_type=1}(F16, %para134)    #(TypeType, Tensor(F16)[2048, 1024]) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(320)/    def construct(self, x):/#77
+    %2 : Tuple[I64*2] = DoSignaturePrimitive::S-Prim-Shape{prim_type=1}(%1)    #(Tensor(F16)[2048, 1024]) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(330)/        if len(x_shape) != 2:/#Φx_shape
+    %3 : NoneType = DoSignaturePrimitive::S-Prim-check_dense_input_shape{prim_type=1}(%2, "Dense")    #(Tuple[I64*2], String) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(322)/        check_dense_input_shape(x_shape, self.cls_name)/#78
+    %4 : NoneType = Primitive::stop_gradient{prim_type=1}(%3)    #(NoneType) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(111)/        logits = self.dense_1(hidden)/#79
+    %5 : I64 = FuncGraph::fg_18(%2)    #(Tuple[I64*2])    # fg_18=L-ms_len.18 #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#80
+    %6 : Bool = DoSignaturePrimitive::S-Prim-not_equal{prim_type=1}(%5, I64(2))    #(I64, I64) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#81
+    %7 : Bool = FuncGraph::fg_19(%6)    #(Bool)    # fg_19=L-bool_.19 #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#82
+    %8 : Func = Primitive::Switch{prim_type=1}(%7, FuncGraph::fg_83, FuncGraph::fg_41)    #(Bool, Func, Func)    # fg_83=L-✓construct.83, fg_41=L-✗construct.41 #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#84
+
+#------------------------> 5
+    %9 = %8() #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#85
+    %10 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%9, %4)    #(Undefined, NoneType) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file F:\bert\results_for_paper\network\finetune_network\src\CLS_LSTM_model.py(111)/        logits = self.dense_1(hidden)/#86
+    Primitive::Return{prim_type=1}(%10)    #(Undefined) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#[CNode]76
+}
+# order:
+#   1: L-construct.40:77{[0]: ValueNode<Primitive> mixed_precision_cast, [1]: ValueNode<Float> Float16, [2]: x}
+#   2: L-construct.40:Φx_shape{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Shape, [1]: 77}
+#   3: L-construct.40:78{[0]: ValueNode<DoSignaturePrimitive> S-Prim-check_dense_input_shape, [1]: Φx_shape, [2]: ValueNode<StringImm> Dense}
+#   4: L-construct.40:80{[0]: ValueNode<FuncGraph> L-ms_len.18, [1]: Φx_shape}
+#   5: L-construct.40:81{[0]: ValueNode<DoSignaturePrimitive> S-Prim-not_equal, [1]: 80, [2]: ValueNode<Int64Imm> 2}
+#   6: L-construct.40:82{[0]: ValueNode<FuncGraph> L-bool_.19, [1]: 81}
+#   7: L-construct.40:84{[0]: ValueNode<Primitive> Switch, [1]: 82, [2]: ValueNode<FuncGraph> L-✓construct.83, [3]: ValueNode<FuncGraph> L-✗construct.41}
+#   8: L-construct.40:85{[0]: 84}
+#   9: L-construct.40:[CNode]76{[0]: ValueNode<Primitive> Return, [1]: 86}
+
+
+# [No.7] L-✗construct.41
+# In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/
+funcgraph fg_41[fg_40](
+) {
+    %1 : $(L-construct.40):Tensor(F16)[2048, 1024] = Primitive::mixed_precision_cast{prim_type=1}(F16, %para134)    #(TypeType, Tensor(F16)[2048, 1024]) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(320)/    def construct(self, x):/#77
+
+#------------------------> 6
+    %2 = FuncGraph::fg_42(%1)    #(Tensor(F16)[2048, 1024])    # fg_42=L-↓construct.42 #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#87
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/#88
+}
+# order:
+#   1: L-✗construct.41:87{[0]: ValueNode<FuncGraph> L-↓construct.42, [1]: 77}
+#   2: L-✗construct.41:88{[0]: ValueNode<Primitive> Return, [1]: 87}
+
+
+# [No.8] L-↓construct.42
+# In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(323)/        if len(x_shape) != 2:/
+funcgraph fg_42[fg_40](
+        %para137 : Tensor(F16)[2048, 1024]    # Φx
+    ) {
+    %1 : Bool = FuncGraph::fg_19(Bool(1))    #(Bool)    # fg_19=L-bool_.19 #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(326)/        if self.has_bias:/#89
+    %2 : Func = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_43, FuncGraph::fg_90)    #(Bool, Func, Func)    # fg_43=L-✓↓construct.43, fg_90=L-✗↓construct.90 #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(326)/        if self.has_bias:/#91
+
+#------------------------> 7
+    %3 = %2() #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(326)/        if self.has_bias:/#92
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(326)/        if self.has_bias:/#93
+}
+# order:
+#   1: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   2: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   3: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   4: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   5: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   6: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   7: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   8: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#   9: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  10: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  11: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  12: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  13: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  14: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  15: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  16: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  17: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  18: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  19: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  20: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  21: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  22: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  23: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  24: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  25: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  26: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  27: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  28: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  29: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  30: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  31: L-↓construct.42:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.weight, [2]: ValueNode<Float> Float16}
+#  32: L-↓construct.42:x{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MatMul, [1]: Φx, [2]: L-bert.dense_1.weight}
+#  33: L-↓construct.42:89{[0]: ValueNode<FuncGraph> L-bool_.19, [1]: ValueNode<BoolImm> true}
+#  34: L-↓construct.42:91{[0]: ValueNode<Primitive> Switch, [1]: 89, [2]: ValueNode<FuncGraph> L-✓↓construct.43, [3]: ValueNode<FuncGraph> L-✗↓construct.90}
+#  35: L-↓construct.42:92{[0]: 91}
+#  36: L-↓construct.42:93{[0]: ValueNode<Primitive> Return, [1]: 92}
+
+
+# [No.9] L-✓↓construct.43
+# In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(326)/        if self.has_bias:/
+funcgraph fg_43[fg_42](
+) {
+
+#------------------------> 8
+    %1 = $(L-↓construct.42):DoSignaturePrimitive::S-Prim-MatMul{prim_type=1}[output_names=["output"], transpose_a=Bool(0), input_names=["x1", "x2"], transpose_x2=Bool(1), transpose_x1=Bool(0), transpose_b=Bool(1)](%para137, %para136)    #(Tensor(F16)[2048, 1024], Ref[Tensor(F32)][2, 512]) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(325)/        x = self.matmul(x, self.weight)/#x
+    %2 = DoSignaturePrimitive::S-Prim-BiasAdd{prim_type=1}[output_names=["output"], format="NCHW", input_names=["x", "b"]](%1, %para135)    #(Undefined, Ref[Tensor(F32)][2]) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(327)/            x = self.bias_add(x, self.bias)/#x
+    %3 = FuncGraph::fg_94(%2)    #(Undefined)    # fg_94=L-↓↓construct.94 #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(326)/        if self.has_bias:/#95
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default/bert-BertCLSModel/dense_1-Dense
+      # In file D:\anaconda3\envs\mindspore\lib\site-packages\mindspore\nn\layer\basic.py(326)/        if self.has_bias:/#96
+}
+# order:
+#   1: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   2: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   3: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   4: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   5: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   6: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   7: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   8: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#   9: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  10: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  11: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  12: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  13: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  14: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  15: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  16: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  17: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  18: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  19: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  20: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  21: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  22: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  23: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  24: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  25: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  26: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  27: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  28: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  29: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  30: L-✓↓construct.43:x{[0]: ValueNode<PrimitivePy> Cast, [1]: L-bert.dense_1.bias, [2]: ValueNode<Float> Float16}
+#  31: L-✓↓construct.43:x{[0]: ValueNode<DoSignaturePrimitive> S-Prim-BiasAdd, [1]: x, [2]: L-bert.dense_1.bias}
+#  32: L-✓↓construct.43:95{[0]: ValueNode<FuncGraph> L-↓↓construct.94, [1]: x}
+#  33: L-✓↓construct.43:96{[0]: ValueNode<Primitive> Return, [1]: 95}
+
+
+#===============================================================================
+# num of function graphs in stack: 9/10 (Ignored 1 internal frames).
