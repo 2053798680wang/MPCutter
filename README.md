@@ -7,7 +7,7 @@ a tool for the prediction of cleavage sites by MP-BERT(pre-trained language mode
 
 ## 2、<span style="background-color: yellow;">Train MPCutter</span> 
 ### Required configuration and environment
-|| <font color="red">PYTHON=3.7</font> || <font color="blue">MINDSPORE=1.8</font> || <font color="green">DOCKER>=18.03</font> || <font color="purple">UniRef50 2048 base for MP-BERT</font> || <font color="orange">	<br>
+|| &nbsp;PYTHON=3.7&nbsp;|| <font color="blue">MINDSPORE=1.8</font> || <font color="green">DOCKER>=18.03</font> || <font color="purple">UniRef50 2048 base for MP-BERT</font> || <font color="orange">	<br>
 •	Ensure you have installed the necessary firmware and drivers for Huawei Atlas server (Linux operating system, Huawei Ascend 910 NPU). <br>
 •	Running MP-BERT with the MindSpore framework on Ascend, it is recommended to use Docker for rapid deployment.<br>
 •	Confirm the installation of Ubuntu 18.04 or CentOS 7.6 64-bit operating system based on ARM architecture, running on an Nvidia GPU server. The server supports GPU and can install environments such as Docker, Conda, and Pip. <br>
