@@ -31,11 +31,11 @@ a tool for the prediction of cleavage sites by MP-BERT(pre-trained language mode
               ```    <br>  <br>
 
 ## 3、Usage
-• only need to use the trained model to predict your own target data   <br>
+• only need to use the trained model to predict your own target data(Organize your target data into the data format described above during the training process)   <br>
               ``` python
 /finetune_network/mpbert_classification.py --config_path /finetune_network/config_2048.yaml --do_predict True --data_url <predicted_data> --description correlation --load_checkpoint_url <your_models> --output_url <output_pathway> --vocab_file /finetune_network/vocab_v2.txt --return_csv True --device_id <device_target>
               ```      <br>  <br> 
 ## 4、Dataset and models
 • Trained models are placed in the 'MPCutter_models' directory.  <br>
-• Datasets required for training the models in the 'MPCutter_cleavage_sites_dataset' directory.  <br>
-• Detailed results of the comparison with different tools in the 'Independent test' directory.  <br>
+• Datasets required for training the models are placed in the 'MPCutter_cleavage_sites_dataset' directory.  <br>
+• Detailed results of the comparison with different tools are placed in the 'Independent test' directory.  <br>
